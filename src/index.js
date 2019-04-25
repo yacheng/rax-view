@@ -17,7 +17,6 @@ let View = (props, ref) => {
 const styles = {
   initial: {
     border: '0 solid black',
-    position: 'relative',
     boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
