@@ -2,16 +2,16 @@ import {createElement, forwardRef} from 'rax';
 import {isWeex} from 'universal-env';
 
 let View = (props, ref) => {
-    if (isWeex) {
-      // TODO: do not pass object value in props
-      return <div {...props} />;
-    } else {
-      let styleProps = {
-        ...styles.initial,
-        ...props.style
-      };
-      return <div ref={ref} {...props} style={styleProps} />;
-    }
+  if (isWeex) {
+    // TODO: do not pass object value in props
+    return <div {...props} />;
+  } else {
+    let styleProps = {
+      ...styles.initial,
+      ...props.style
+    };
+    return <div ref={ref} {...props} style={styleProps} />;
+  }
 };
 
 const styles = {
