@@ -1,12 +1,13 @@
-import {createElement} from 'rax';
-import {isWeex} from 'universal-env';
+import { createElement } from 'rax';
+import { isWeex } from 'universal-env';
+import { Props } from './types';
 
-export default (props) => {
+export default (props: Props) => {
   if (isWeex) {
     // TODO: do not pass object value in props
     return <div {...props} />;
   } else {
-    let styleProps = {
+    let styleProps:any = {
       ...styles.initial,
       ...props.style
     };
