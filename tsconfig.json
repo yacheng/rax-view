@@ -15,10 +15,6 @@
     "noUnusedParameters": false,
     "noImplicitAny": false,
     "noImplicitThis": false,
-    "typeRoots": [
-      "node_modules/@rax-types",
-      "node_modules/@types"
-    ],
     "outDir": "lib",
     "baseUrl": ".",
     "paths": {
