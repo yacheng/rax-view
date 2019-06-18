@@ -1,19 +1,21 @@
-import { createElement } from 'rax';
+import { createElement, forwardRef } from 'rax';
 import { isWeex } from 'universal-env';
 import { Props } from './types';
 
-export default (props: Props) => {
+const View = forwardRef((props: Props, ref) => {
   if (isWeex) {
     // TODO: do not pass object value in props
-    return <div {...props} />;
+    return <div ref={ref} {...props} />;
   } else {
     let styleProps:any = {
       ...styles.initial,
       ...props.style
     };
-    return <div {...props} style={styleProps} />;
+    return <div ref={ref} style={styleProps} />;
   }
-};
+});
+
+export default View;
 
 const styles = {
   initial: {
