@@ -13,7 +13,6 @@ const styles = {
 };
 
 const View = forwardRef((props, ref) => {
-
   const viewRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
