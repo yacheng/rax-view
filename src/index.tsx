@@ -13,7 +13,6 @@ const styles = {
 };
 
 const View = forwardRef((props, ref) => {
-
   useImperativeHandle(ref, () => ({
     _nativeNode: ref.current
   }));
