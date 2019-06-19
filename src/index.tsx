@@ -1,4 +1,4 @@
-import { createElement, forwardRef, useImperativeHandle } from 'rax';
+import { createElement, forwardRef, useImperativeHandle, useRef } from 'rax';
 import { isWeex } from 'universal-env';
 
 const styles = {
@@ -13,20 +13,23 @@ const styles = {
 };
 
 const View = forwardRef((props, ref) => {
+
+  const viewRef = useRef(null);
+
   useImperativeHandle(ref, () => ({
-    _nativeNode: ref.current
+    _nativeNode: viewRef.current
   }));
 
   if (isWeex) {
     // TODO: do not pass object value in props
-    return <div ref={ref} {...props} />;
+    return <div ref={viewRef} {...props} />;
   } else {
     const { style = {}, ...rest} = props;
     let styleProps = {
       ...styles.initial,
       ...style
     };
-    return <div ref={ref} style={styleProps} {...rest}/>;
+    return <div ref={viewRef} style={styleProps} {...rest}/>;
   }
 });
 
