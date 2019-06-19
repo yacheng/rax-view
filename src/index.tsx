@@ -22,7 +22,7 @@ const View = forwardRef((props: Props, ref) => {
       ...styles.initial,
       ...props.style
     };
-    return <div ref={ref} style={styleProps} />;
+    return <div ref={ref} style={styleProps} {...props}/>;
   }
 });
 

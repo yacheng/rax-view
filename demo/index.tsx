@@ -8,4 +8,4 @@ render(<View style={{
   height: 200,
   width: 200,
   background: '#ff6600'
-}} />, document.body, { driver: isWeex ? DriverWeex : DriverDOM });
+}} ><span>hahah</span></View>, document.body, { driver: isWeex ? DriverWeex : DriverDOM });
