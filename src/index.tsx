@@ -1,6 +1,5 @@
 import { createElement, forwardRef } from 'rax';
 import { isWeex } from 'universal-env';
-import { Props } from './types';
 
 const styles = {
   initial: {
@@ -13,16 +12,18 @@ const styles = {
   }
 };
 
-const View = forwardRef((props: Props, ref) => {
+const View = forwardRef((props, ref) => {
+
   if (isWeex) {
     // TODO: do not pass object value in props
     return <div ref={ref} {...props} />;
   } else {
-    let styleProps: any = {
+    const { style = {}, ...rest} = props;
+    let styleProps = {
       ...styles.initial,
-      ...props.style
+      ...style
     };
-    return <div ref={ref} style={styleProps} {...props}/>;
+    return <div ref={ref} style={styleProps} {...rest}/>;
   }
 });
 
