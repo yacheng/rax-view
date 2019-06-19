@@ -1,4 +1,4 @@
-import { createElement, forwardRef } from 'rax';
+import { createElement, forwardRef, useImperativeHandle } from 'rax';
 import { isWeex } from 'universal-env';
 
 const styles = {
@@ -13,6 +13,10 @@ const styles = {
 };
 
 const View = forwardRef((props, ref) => {
+
+  useImperativeHandle(ref, () => ({
+    _nativeNode: ref.current
+  }));
 
   if (isWeex) {
     // TODO: do not pass object value in props
