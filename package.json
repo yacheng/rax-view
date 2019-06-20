@@ -1,6 +1,6 @@
 {
   "name": "rax-view",
-  "version": "1.0.1-beta.7",
+  "version": "1.0.1-beta.8",
   "description": "View component for Rax.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -8,7 +8,7 @@
     "clean": "rm -rf ./lib && rm -rf ./package-lock.json",
     "build": "npm run clean && rax-scripts build --type 'component'",
     "start": "rax-scripts start --type 'component' -p 8000",
-    "miniapp":"rax-scripts start --type 'component-miniapp'",
+    "miniapp": "rax-scripts start --type 'component-miniapp'",
     "prepublishOnly": "npm run build",
     "test": "npm run build && rax-scripts test",
     "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src"
