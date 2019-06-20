@@ -1,7 +1,6 @@
 import {createElement, render, useRef, useEffect } from 'rax';
-import * as DriverDOM from 'driver-dom';
-import { isWeex } from 'universal-env';
-import * as DriverWeex from 'driver-weex';
+import DU from "driver-universal"
+import Text from 'rax-text'
 import View from '../src/index';
 
 const App = () => {
@@ -14,8 +13,8 @@ const App = () => {
   return <View ref={viewRef} style={{
     height: 200,
     width: 200,
-    background: '#ff6600'
-  }} ><span>hahah</span></View>
+    backgroundColor: '#ff6600'
+  }} ><Text>asdf</Text></View>
 };
 
-render(<App />, document.body, { driver: isWeex ? DriverWeex : DriverDOM });
+render(<App />, document.body, { driver: DU });

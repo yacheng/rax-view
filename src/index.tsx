@@ -1,5 +1,6 @@
 import { createElement, forwardRef, useImperativeHandle, useRef } from 'rax';
 import { isWeex } from 'universal-env';
+import { Props } from './types';
 
 const styles = {
   initial: {
@@ -12,7 +13,7 @@ const styles = {
   }
 };
 
-const View = forwardRef((props, ref) => {
+const View = forwardRef((props:Props, ref) => {
   const viewRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
