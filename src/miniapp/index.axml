@@ -7,6 +7,7 @@
     onTouchStart="onTouchStart"
     onTouchMove="onTouchMove"
     onTouchEnd="onTouchEnd"
+    animation="{{animation}}"
     onTouchCancel="onTouchCancel">
     <slot/>
 </view>

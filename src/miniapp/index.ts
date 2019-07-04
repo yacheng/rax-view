@@ -13,7 +13,8 @@ Component({
     onTouchStart: (e) => {},
     onTouchMove: (e) => {},
     onTouchEnd: (e) => {},
-    onTouchCancel: (e) => {}
+    onTouchCancel: (e) => {},
+    animation:null
   },
   didMount() {},
   methods: {
