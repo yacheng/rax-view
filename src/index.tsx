@@ -13,7 +13,7 @@ const styles = {
   }
 };
 
-const View = forwardRef((props:Props, ref) => {
+const View:Rax.RefForwardingComponent<any, Props> = forwardRef((props:Props, ref) => {
   const viewRef = useRef(null);
 
   useImperativeHandle(ref, () => ({
