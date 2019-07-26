@@ -1,6 +1,12 @@
-import { createElement, forwardRef, useImperativeHandle, useRef } from 'rax';
+import {
+  createElement,
+  forwardRef,
+  useImperativeHandle,
+  useRef,
+  Ref
+} from 'rax';
 import { isWeex } from 'universal-env';
-import { Props } from './types';
+import { ViewProps, ElementWithNativeNode } from './types';
 
 const styles = {
   initial: {
@@ -13,26 +19,29 @@ const styles = {
   }
 };
 
-const View:Rax.RefForwardingComponent<any, Props> = forwardRef((props:Props, ref) => {
-  const viewRef = useRef(null);
+const View: Rax.RefForwardingComponent<HTMLDivElement, ViewProps> = forwardRef(
+  (props: ViewProps, ref: Ref<HTMLDivElement>) => {
+    const viewRef = useRef(null);
 
-  useImperativeHandle(ref, () => ({
-    _nativeNode: viewRef.current
-  }));
+    useImperativeHandle<
+    HTMLDivElement,
+    ElementWithNativeNode
+    >(ref, () => ({
+      _nativeNode: viewRef.current,
+      ...viewRef.current
+    }));
 
-  if (isWeex) {
-    // TODO: do not pass object value in props
-    return <div ref={viewRef} {...props} />;
-  } else {
-    const { style = {}, ...rest} = props;
-    let styleProps = {
-      ...styles.initial,
-      ...style
-    };
-    return <div ref={viewRef} style={styleProps} {...rest}/>;
+    if (isWeex) {
+      // TODO: do not pass object value in props
+      return <div ref={viewRef} {...props} />;
+    } else {
+      const { style = {}, ...rest } = props;
+      let styleProps = {
+        ...styles.initial,
+        ...style
+      };
+      return <div ref={viewRef} style={( styleProps as Rax.CSSProperties)} {...rest} />;
+    }
   }
-});
-
+);
 export default View;
-
-

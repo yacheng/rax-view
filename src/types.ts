@@ -1,6 +1,8 @@
 import * as Rax from 'rax';
 
-export interface Props extends Rax.Attributes {
-  style?: any;
-  className?: string;
+export interface ViewProps extends Rax.HTMLAttributes<HTMLDivElement> {
+  ref?: Rax.Ref<ElementWithNativeNode>;
+}
+export interface ElementWithNativeNode extends HTMLDivElement {
+  _nativeNode: HTMLDivElement;
 }
