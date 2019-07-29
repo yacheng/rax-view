@@ -20,7 +20,7 @@ Page({
     });
 
     setTimeout(
-      function() {
+      function () {
         animation.translate(35).step();
         this.setData({
           animationInfo: animation.export()
@@ -30,7 +30,7 @@ Page({
     );
   },
   rotateAndScale() {
-    // 旋转同时放大
+    // rotate and scale
     this.animation
       .rotate(60)
       .scale(3, 3)
@@ -40,7 +40,7 @@ Page({
     });
   },
   rotateThenScale() {
-    // 先旋转后放大
+    // rotate and scale
     this.animation.rotate(60).step();
     this.animation.scale(3, 3).step();
     this.setData({
@@ -48,7 +48,7 @@ Page({
     });
   },
   rotateAndScaleThenTranslate() {
-    // 先旋转同时放大，然后平移
+    // rotate and scale,then translate
     this.animation
       .rotate(60)
       .scale(3, 3)

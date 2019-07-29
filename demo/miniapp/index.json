@@ -1,5 +1,5 @@
 {
-  "defaultTitle": "小程序Rax view 组件",
+  "defaultTitle": "Miniapp rax view component",
   "usingComponents": {
     "rax-view": "../../src/miniapp/index"
   }
