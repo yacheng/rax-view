@@ -1,0 +1,13 @@
+<view class="{{className}}" 
+    style="{{defaultStyle}}{{style}}"
+    onTap="onClick" 
+    onLongTap="onLongPress" 
+    onAppear="onAppear"
+    onDisAppear="onDisAppear"
+    onTouchStart="onTouchStart"
+    onTouchMove="onTouchMove"
+    onTouchEnd="onTouchEnd"
+    animation="{{animation}}"
+    onTouchCancel="onTouchCancel">
+    <slot/>
+</view>
