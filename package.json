@@ -1,6 +1,6 @@
 {
   "name": "rax-view",
-  "version": "1.0.1-beta.11",
+  "version": "1.0.1",
   "description": "View component for Rax.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -38,7 +38,7 @@
     "@typescript-eslint/parser": "^1.7.0",
     "csstype": "^2.6.4",
     "eslint": "^5.16.0",
-    "driver-universal": "^1.0.0-beta.5",
+    "driver-universal": "^1.0.0",
     "driver-dom": "^1.0.0",
     "driver-weex": "^1.0.0",
     "eslint-config-rax": "^0.0.0",
