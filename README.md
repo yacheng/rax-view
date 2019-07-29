@@ -28,8 +28,6 @@ $ npm install rax-view --save
 | onTouchEnd | `function` | - | false | 触摸动作结束 | <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" /> <img alt="weex" src="https://gw.alicdn.com/tfs/TB1jM0ebMaH3KVjSZFjXXcFWpXa-200-200.svg" width="25px" height="25px" /><img alt="miniApp" src="https://gw.alicdn.com/tfs/TB1bBpmbRCw3KVjSZFuXXcAOpXa-200-200.svg" width="25px" height="25px" />|
 | onTouchCancel | `function` | - | false | 触摸动作被打断，如来电提醒，弹窗 | <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" /> <img alt="weex" src="https://gw.alicdn.com/tfs/TB1jM0ebMaH3KVjSZFjXXcFWpXa-200-200.svg" width="25px" height="25px" /><img alt="miniApp" src="https://gw.alicdn.com/tfs/TB1bBpmbRCw3KVjSZFuXXcAOpXa-200-200.svg" width="25px" height="25px" />|
 
-[在线 Demo](https://jsplayground.taobao.org/raxplayground/47b1616c-5fcd-45bf-8ad1-dbe3bb8a00ec)
-
 ```jsx
 import { createElement, useRef, useEffect, render } from "rax";
 import DU from "driver-universal";
