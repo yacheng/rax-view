@@ -6,6 +6,7 @@ import {
 } from 'rax';
 import { isWeex } from 'universal-env';
 import { ViewProps } from './types';
+
 const styles = {
   initial: {
     border: '0 solid black',
