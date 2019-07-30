@@ -1,11 +1,13 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { createElement, useRef, useEffect, render } from 'rax';
+import { createElement, useRef, useEffect, render, createRef } from 'rax';
 import DU from 'driver-universal';
 import View from '../src/index';
 
 const App = () => {
   const viewRef = useRef(null);
-  useEffect(() => {});
+  useEffect(() => {
+    console.log(viewRef.current);
+  });
   return (
     <View
       ref={viewRef}
@@ -49,7 +51,6 @@ const App = () => {
           top: 80,
           left: 210
         }}
-        onClick={e => {}}
       />
     </View>
   );

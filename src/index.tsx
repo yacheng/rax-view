@@ -3,10 +3,9 @@ import {
   forwardRef,
   useImperativeHandle,
   useRef,
-  Ref
 } from 'rax';
 import { isWeex } from 'universal-env';
-import { ViewProps, ElementWithNativeNode } from './types';
+import { ViewProps } from './types';
 
 const styles = {
   initial: {
@@ -19,12 +18,11 @@ const styles = {
   }
 };
 
-const View: Rax.RefForwardingComponent<HTMLDivElement, ViewProps> = forwardRef(
-  (props: ViewProps, ref: Ref<HTMLDivElement>) => {
+const View: Rax.RefForwardingComponent<{}, ViewProps> = forwardRef(
+  (props, ref) => {
     const viewRef = useRef(null);
-    useImperativeHandle<HTMLDivElement, ElementWithNativeNode>(ref, () => ({
+    useImperativeHandle(ref, () => ({
       _nativeNode: viewRef.current,
-      ...viewRef.current
     }));
 
     if (isWeex) {
