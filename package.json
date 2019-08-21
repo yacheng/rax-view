@@ -18,7 +18,8 @@
     "rax-component"
   ],
   "miniappConfig": {
-    "main": "lib/miniapp/index"
+    "main": "lib/miniapp/index",
+    "main:wechat": "lib/miniapp-wechat/index"
   },
   "engines": {
     "npm": ">=3.0.0"
