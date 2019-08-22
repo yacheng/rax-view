@@ -11,7 +11,7 @@ Component({
       type: String,
       value: ''
     },
-    style: {
+    styleSheet: {
       type: String,
       value: ''
     },
@@ -31,35 +31,27 @@ Component({
   methods: {
     onClick: function onClick(e) {
       var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onClick(event);
+      this.triggerEvent('onClick', event);
     },
-    onLongpress: function onLongpress(e) {
+    onLongPress: function onLongpress(e) {
       var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onLongpress(event);
-    },
-    onAppear: function onAppear(e) {
-      var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onAppear(event);
-    },
-    onDisAppear: function onDisAppear(e) {
-      var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onDisAppear(event);
+      this.triggerEvent('onLongPress', event);
     },
     onTouchStart: function onTouchStart(e) {
       var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onTouchStart(event);
+      this.triggerEvent('onTouchStart', event);
     },
     onTouchMove: function onTouchMove(e) {
       var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onTouchMove(event);
+      this.triggerEvent('onTouchMove', event);
     },
     onTouchEnd: function onTouchEnd(e) {
       var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onTouchEnd(event);
+      this.triggerEvent('onTouchEnd', event);
     },
     onTouchCancel: function onTouchCancel(e) {
       var event = (0, _fmtEvent.default)(this.props, e);
-      this.props.onTouchCancel(event);
+      this.triggerEvent('onTouchCancel', event);
     }
   }
 });
