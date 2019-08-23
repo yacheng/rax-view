@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "clean": "rm -rf ./lib && rm -rf ./package-lock.json",
+    "clean": "rm -rf ./lib && rm -rf ./package-lock.json && rm -f ./yarn.lock",
     "build": "npm run clean && rax-scripts build --type 'component'",
     "start": "rax-scripts start --type 'component' -p 8000",
     "miniapp": "rax-scripts start --type 'component-miniapp'",
@@ -30,20 +30,33 @@
     "rax": "^1.0.0"
   },
   "devDependencies": {
-    "rax-text": "^1.0.1-beta.0",
     "@rax-types/rax": "^1.0.5",
     "@types/ali-app": "^1.0.0",
     "@types/jest": "^24.0.12",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "csstype": "^2.6.4",
-    "eslint": "^5.16.0",
-    "driver-universal": "^1.0.0",
     "driver-dom": "^1.0.0",
+    "driver-universal": "^1.0.0",
     "driver-weex": "^1.0.0",
+    "eslint": "^5.16.0",
     "eslint-config-rax": "^0.0.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
     "rax": "^1.0.0",
     "rax-scripts": "1.2.1",
-    "rax-test-renderer": "^1.0.0"
+    "rax-test-renderer": "^1.0.0",
+    "rax-text": "^1.0.1-beta.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
