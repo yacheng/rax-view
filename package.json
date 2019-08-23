@@ -45,8 +45,7 @@
     "lint-staged": "^9.2.3",
     "rax": "^1.0.0",
     "rax-scripts": "1.2.1",
-    "rax-test-renderer": "^1.0.0",
-    "rax-text": "^1.0.1-beta.0"
+    "rax-test-renderer": "^1.0.0"
   },
   "husky": {
     "hooks": {
