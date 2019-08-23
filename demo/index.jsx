@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { createElement, useRef, useEffect, render, createRef } from 'rax';
+import { createElement, useRef, useEffect, render } from 'rax';
 import DU from 'driver-universal';
 import View from '../src/index';
 
