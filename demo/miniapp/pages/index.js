@@ -20,7 +20,7 @@ Page({
     });
 
     setTimeout(
-      function () {
+      function() {
         animation.translate(35).step();
         this.setData({
           animationInfo: animation.export()
