@@ -1,5 +1,5 @@
-<view class="{{className}}" 
-    style="{{defaultStyle}}{{style}}"
+<view class="rax-view {{className}}" 
+    style="{{style}}"
     onTap="onClick" 
     onLongTap="onLongPress" 
     onAppear="onAppear"

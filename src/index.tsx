@@ -1,42 +1,14 @@
-import {
-  createElement,
-  forwardRef,
-  useImperativeHandle,
-  useRef,
-} from 'rax';
+import { createElement, forwardRef, ForwardRefExoticComponent, RefAttributes, HTMLAttributes } from 'rax';
+import cx from 'classnames/dedupe';
 import { isWeex } from 'universal-env';
-import { ViewProps } from './types';
+import './index.css';
 
-const styles = {
-  initial: {
-    border: '0 solid black',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flexDirection: 'column',
-    alignContent: 'flex-start',
-    flexShrink: 0
-  }
-};
+export type ViewProps = RefAttributes<HTMLDivElement> & HTMLAttributes<HTMLDivElement>;
 
-const View: Rax.RefForwardingComponent<{}, ViewProps> = forwardRef(
+const View: ForwardRefExoticComponent<ViewProps> = forwardRef(
   (props, ref) => {
-    const viewRef = useRef(null);
-    useImperativeHandle(ref, () => ({
-      _nativeNode: viewRef.current,
-    }));
-
-    if (isWeex) {
-      return <div ref={viewRef} {...props} />;
-    } else {
-      const { style = {}, ...rest } = props;
-      let styleProps = {
-        ...styles.initial,
-        ...style
-      };
-      return (
-        <div ref={viewRef} style={styleProps as Rax.CSSProperties} {...rest} />
-      );
-    }
+    const { className, style, ...rest } = props;
+    return <div {...rest} ref={ref} className={cx( isWeex ? '' : 'rax-view', className)} style={style} />;
   }
 );
 export default View;
