@@ -2,54 +2,48 @@ import fmtEvent from './fmtEvent';
 
 Component({
   data: {},
-  props: {
-    className: '',
-    style: '',
-    defaultStyle:
-      'border:0 solid black;display:flex;flex-direction:column;align-content:flex-start;flex-shrink:0;box-sizing:border-box;',
-    onClick: e => {},
-    onLongpress: e => {},
-    onAppear: e => {},
-    onDisAppear: e => {},
-    onTouchStart: e => {},
-    onTouchMove: e => {},
-    onTouchEnd: e => {},
-    onTouchCancel: e => {},
-    animation: null
+  properties: {
+    className: {
+      type: String,
+      value: ''
+    },
+    styleSheet: {
+      type: String,
+      value: ''
+    },
+    defaultStyle: {
+      type: String,
+      value: 'border:0 solid black;display:flex;flex-direction:column;align-content:flex-start;flex-shrink:0;box-sizing:border-box;'
+    },
+    animation: {
+      type: Object,
+      value: null
+    }
   },
-  didMount() {},
   methods: {
     onClick(e) {
       const event = fmtEvent(this.props, e);
-      this.props.onClick(event);
+      this.triggerEvent('onClick', event);
     },
-    onLongpress(e) {
+    onLongPress(e) {
       const event = fmtEvent(this.props, e);
-      this.props.onLongpress(event);
-    },
-    onAppear(e) {
-      const event = fmtEvent(this.props, e);
-      this.props.onAppear(event);
-    },
-    onDisAppear(e) {
-      const event = fmtEvent(this.props, e);
-      this.props.onDisAppear(event);
+      this.triggerEvent('onLongPress', event);
     },
     onTouchStart(e) {
       const event = fmtEvent(this.props, e);
-      this.props.onTouchStart(event);
+      this.triggerEvent('onTouchStart', event);
     },
     onTouchMove(e) {
       const event = fmtEvent(this.props, e);
-      this.props.onTouchMove(event);
+      this.triggerEvent('onTouchMove', event);
     },
     onTouchEnd(e) {
       const event = fmtEvent(this.props, e);
-      this.props.onTouchEnd(event);
+      this.triggerEvent('onTouchEnd', event);
     },
     onTouchCancel(e) {
       const event = fmtEvent(this.props, e);
-      this.props.onTouchCancel(event);
+      this.triggerEvent('onTouchCancel', event);
     }
   }
 });
