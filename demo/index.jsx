@@ -1,7 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { createElement, useRef, useEffect, render, createRef } from 'rax';
+import { createElement, useRef, useEffect, render } from 'rax';
 import DU from 'driver-universal';
-import View from '../src/index';
+import View from '../src';
+import './index.css';
 
 const App = () => {
   const viewRef = useRef(null);
@@ -11,19 +12,13 @@ const App = () => {
   return (
     <View
       ref={viewRef}
-      style={{
-        padding: 30
-      }}
+      className="box-1"
       onClick={() => {
         alert('container was clicked!');
       }}
     >
       <View
-        style={{
-          width: 300,
-          height: 300,
-          backgroundColor: 'red'
-        }}
+        className="box-2"
         onClick={e => {
           e.stopPropagation();
           alert('red was clicked');
